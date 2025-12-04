@@ -12,6 +12,7 @@ function UI:CreateDetailsFrame(parent)
     local frame = CreateFrame("Frame", "DyeProfitsDetailsFrame", parent)
     frame:SetSize(185, 150)
     frame:SetPoint("BOTTOMRIGHT", parent, "BOTTOMRIGHT", -30, 30)
+    frame:Hide()
     
     local text = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     text:SetPoint("TOPLEFT", frame, "TOPLEFT", 0, 0)
@@ -36,9 +37,17 @@ function UI:UpdateDetails(recipeInfo)
     local status, err = pcall(function()
         local schematic = C_TradeSkillUI.GetRecipeSchematic(recipeInfo.recipeID, false)
         if not schematic then 
-            self.detailsText:SetText("No schematic found")
+            self.detailsFrame:Hide()
             return 
         end
+        
+        local dyeItemID = schematic.outputItemID
+        if not dyeItemID or not HotDye:GetCategoryForDye(dyeItemID) then
+            self.detailsFrame:Hide()
+            return
+        end
+        
+        self.detailsFrame:Show()
 
         local hasReagents = false
         local lines = {}
@@ -58,7 +67,6 @@ function UI:UpdateDetails(recipeInfo)
         end
 
         local resultValue = 0
-        local dyeItemID = schematic.outputItemID
         if dyeItemID then
             local _, resultLink = GetItemInfo(dyeItemID)
             resultValue = PricingService:GetPrice(dyeItemID, resultLink)
@@ -97,12 +105,12 @@ function UI:UpdateDetails(recipeInfo)
                 local _, herbLink = GetItemInfo(herbID)
                 herbLink = herbLink or ("Item " .. herbID)
                 
-                table.insert(lines, string.format("|cFFFFD700Strategy 2: Mill Herbs|r"))
+                table.insert(lines, string.format("|cFFFFD700Strategy 2: Salvage Herbs|r"))
                 table.insert(lines, string.format("Using: %s", herbLink))
                 table.insert(lines, string.format("Cost: %s", PricingService:FormatMoney(totalHerbCost)))
                 table.insert(lines, string.format("Profit: |cFF%s%s|r", herbColor, PricingService:FormatMoney(herbProfit)))
             else
-                 table.insert(lines, string.format("|cFFFFD700Strategy 2: Mill Herbs|r"))
+                 table.insert(lines, string.format("|cFFFFD700Strategy 2: Salvage Herbs|r"))
                  table.insert(lines, "No herb data found")
             end
         else

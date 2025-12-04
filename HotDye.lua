@@ -85,7 +85,9 @@ local function GetDailySold(itemID)
 end
 
 function HotDye:ScanHottestDyes()
-    if self.hasScanned then return end
+    if self.hasScanned then 
+        return 
+    end
     
     local categoryBest = {}
     
@@ -134,8 +136,14 @@ function HotDye:HookRecipeList()
         return
     end
     
+    local updateTimer = nil
+    
     local function UpdateListIcons(scrollBox)
-        C_Timer.After(0.1, function()
+        if updateTimer then
+            updateTimer:Cancel()
+        end
+        
+        updateTimer = C_Timer.NewTimer(1.0, function()
             if scrollBox.ForEachFrame then
                 scrollBox:ForEachFrame(function(frame, data)
                     local actualData = nil
