@@ -174,7 +174,16 @@ Data.HerbColors = {
 -- ============================================================================
 
 Data.PigmentIDToColor = {
+    [262625] = "Purple",
     [262639] = "Black",
+    [262642] = "Brown",
+    [262643] = "Blue",
+    [262655] = "Red",
+    [260947] = "White",
+    [262644] = "Yellow",
+    [262647] = "Green",
+    [262626] = "Teal",
+    [262656] = "Orange",
 }
 
 function Data:GetPigmentSource(pigmentItemID)
