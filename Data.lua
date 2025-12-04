@@ -189,25 +189,6 @@ Data.PigmentIDToColor = {
 function Data:GetPigmentSource(pigmentItemID)
     local color = self.PigmentIDToColor[pigmentItemID]
     
-    -- Fallback: Check name if ID is unknown
-    if not color then
-        local name = GetItemInfo(pigmentItemID)
-        if name then
-            if string.find(name, "Black") then color = "Black" end
-            if string.find(name, "Red") then color = "Red" end
-            if string.find(name, "Blue") then color = "Blue" end
-            if string.find(name, "Green") then color = "Green" end
-            if string.find(name, "Yellow") then color = "Yellow" end
-            if string.find(name, "Orange") then color = "Orange" end
-            if string.find(name, "Purple") then color = "Purple" end
-            if string.find(name, "Brown") then color = "Brown" end
-            if string.find(name, "White") then color = "White" end
-            if string.find(name, "Teal") then color = "Teal" end
-            
-            if color then self.PigmentIDToColor[pigmentItemID] = color end
-        end
-    end
-
     if color and self.HerbColors[color] then
         local sources = {}
         for _, herbID in ipairs(self.HerbColors[color]) do
