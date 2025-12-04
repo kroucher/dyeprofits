@@ -2,7 +2,7 @@
 ## Title: Dye Profits
 ## Notes: Calculate profits for dye crafting
 ## Author: Kroucher
-## Version: 0.1.1
+## Version: 0.1.2
 ## Dependencies: Blizzard_Professions
 
 Data.lua
