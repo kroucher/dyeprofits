@@ -3,6 +3,8 @@ local addonName, addon = ...
 local UI = addon.UI
 local HotDye = addon.HotDye
 
+local DYE_CRAFTING_SKILL_LINE_ID = 2984
+
 local function Init()
     print("|cFF00FF00Dye Profits|r: Loaded")
 
@@ -16,7 +18,7 @@ local function Init()
     if ProfessionsFrame.CraftingPage.SchematicForm then
         hooksecurefunc(ProfessionsFrame.CraftingPage.SchematicForm, "Init", function(self, recipeInfo)
             local professionInfo = ProfessionsFrame:GetProfessionInfo()
-            if professionInfo and professionInfo.professionName == "Dye Crafting" then
+            if professionInfo and professionInfo.professionID == DYE_CRAFTING_SKILL_LINE_ID then
                 UI:UpdateDetails(recipeInfo)
             else
                 UI.detailsFrame:Hide()
@@ -28,7 +30,7 @@ local function Init()
             UI.lastRecipeID = nil
             
             local professionInfo = ProfessionsFrame:GetProfessionInfo()
-            if not professionInfo or professionInfo.professionName ~= "Dye Crafting" then
+            if not professionInfo or professionInfo.professionID ~= DYE_CRAFTING_SKILL_LINE_ID then
                 return
             end
             
