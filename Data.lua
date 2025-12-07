@@ -73,8 +73,8 @@ local fool_s_cap = 72236
 -- Draenor
 local fireweed_wod = 109125
 local frostweed = 109124
-local starflower = 109126
-local gorgrond_flytrap = 109127
+local starflower = 109127
+local gorgrond_flytrap = 109126
 local nagrand_arrowbloom = 109128
 local talador_orchid = 109129
 
@@ -135,7 +135,6 @@ local arathors_spear_bronze = 210808
 local arathors_spear_silver = 210809
 local arathors_spear_gold = 210810
 
--- Herb Colors Map
 Data.HerbColors = {
     Red = {
         mageroyal, netherbloom, tiger_lily, cinderbloom, rain_poppy, fireweed_wod, astral_glory, star_moss, widobloom, saxifrage_bronze, saxifrage_silver, saxifrage_gold, mana_thistle, arathors_spear_bronze, arathors_spear_silver, arathors_spear_gold
@@ -180,7 +179,7 @@ Data.PigmentIDToColor = {
     [262643] = "Blue",
     [262655] = "Red",
     [260947] = "White",
-    [262644] = "Yellow",
+    [262648] = "Yellow",
     [262647] = "Green",
     [262626] = "Teal",
     [262656] = "Orange",
