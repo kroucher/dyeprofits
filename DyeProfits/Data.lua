@@ -16,12 +16,12 @@ local briarthorn = 2450
 local swiftthistle = 2452
 local bruiseweed = 2453
 local wild_steelbloom = 3355
-local grave_moss = 3356
-local kingsblood = 3357
-local liferoot = 3358
+local grave_moss = 3369
+local kingsblood = 3356
+local liferoot = 3357
 local fadeleaf = 3818
 local goldthorn = 3821
-local khadgars_whisker = 3369
+local khadgars_whisker = 3358
 local wintersbite = 3819
 local stranglekelp = 3820
 local firebloom = 4625
@@ -66,9 +66,9 @@ local whiptail = 52988
 -- Pandaria
 local green_tea_leaf = 72234
 local rain_poppy = 72237
-local silkweed = 72238
-local snow_lily = 72235
-local fool_s_cap = 72236
+local silkweed = 72235
+local snow_lily = 79010
+local fool_s_cap = 79011
 
 -- Draenor
 local fireweed_wod = 109125
@@ -92,8 +92,8 @@ local star_moss = 152506
 local akundas_bite = 152507
 local winters_kiss = 152508
 local sirens_pollen = 152509
-local sea_stalk = 152510
-local anchor_weed = 152511
+local sea_stalk = 152511
+local anchor_weed = 152510
 local zinanthid = 168487
 
 -- Shadowlands
